@@ -21,8 +21,10 @@ public class Bodega {
     public static String user = "root";
     public static String pass = "";
     public static String url = "jdbc:mysql://localhost:3306/test";
+    ///Usuario y contraseña para login de trabajador
     private static final String USUARIO_VALIDO = "admin";
     private static final String CONTRASENA_VALIDA = "password";
+    
     
     private static Map<Integer, Producto> Prod = new HashMap<>();
     
@@ -141,9 +143,6 @@ public class Bodega {
             }
     }
 
-    public Producto obtenerProducto(int id) {
-        return Prod.get(id);
-    }
 }
 /*class Productos {
     private int id;
