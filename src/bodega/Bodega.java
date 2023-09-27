@@ -24,10 +24,7 @@ public class Bodega {
     ///Usuario y contraseña para login de trabajador
     private static final String USUARIO_VALIDO = "admin";
     private static final String CONTRASENA_VALIDA = "password";
-    
-    
-    private static Map<Integer, Producto> Prod = new HashMap<>();
-    
+   
     public static void main(String[] args) {
         Bodeg bodega = new Bodeg();
         con = null;
