@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
 
 
 public class Bodega {
+    ///conexion con sql
     private static java.sql.Connection con;
     public static String driver  = "com.mysql.cj.jdbc.Driver";
     public static String user = "root";
@@ -26,7 +27,8 @@ public class Bodega {
     private static final String CONTRASENA_VALIDA = "password";
    
     public static void main(String[] args) {
-        Bodeg bodega = new Bodeg();
+        
+        Bodeg bodeg = new Bodeg();
         con = null;
         try {
             
@@ -37,17 +39,18 @@ public class Bodega {
             } catch (SQLException e) {
                 JOptionPane.showMessageDialog(null,"Error "+e);
             }
-            bodega.agregarProducto(new Producto(1,"Hamburguesa", 8.99, 10));
-            bodega.agregarProducto(new Producto(2,"Perro", 8.99, 10));
-            bodega.agregarProducto(new Producto(3,"Empanada", 8.99, 10));
-            bodega.agregarProducto(new Producto(4,"Pizza", 8.99, 10));
-            bodega.agregarProducto(new Producto(5,"Arepa", 8.99, 10));
-            bodega.agregarProducto(new Producto(6,"Chorizo", 8.99, 10));
-            bodega.agregarProducto(new Producto(7,"Salchipapa", 8.99, 10));
-            bodega.agregarProducto(new Producto(8,"Gaseosa", 8.99, 10));
+        ///Crear inventario
+            bodeg.agregarProducto(new Producto(1,"Hamburguesa", 8.99, 10));
+            bodeg.agregarProducto(new Producto(2,"Perro", 8.99, 10));
+            bodeg.agregarProducto(new Producto(3,"Empanada", 8.99, 10));
+            bodeg.agregarProducto(new Producto(4,"Pizza", 8.99, 10));
+            bodeg.agregarProducto(new Producto(5,"Arepa", 8.99, 10));
+            bodeg.agregarProducto(new Producto(6,"Chorizo", 8.99, 10));
+            bodeg.agregarProducto(new Producto(7,"Salchipapa", 8.99, 10));
+            bodeg.agregarProducto(new Producto(8,"Gaseosa", 8.99, 10));
             
             Scanner scanner = new Scanner(System.in);
-            Bodeg bodeg = new Bodeg();
+            
             Trabajador trabajador = new Trabajador(USUARIO_VALIDO, CONTRASENA_VALIDA);
 
             while (true) {
