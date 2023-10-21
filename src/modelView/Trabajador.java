@@ -1,5 +1,5 @@
 
-package bodega;
+package modelView;
 
 public class Trabajador {
     private String nombreUsuario;

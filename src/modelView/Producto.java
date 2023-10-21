@@ -1,9 +1,9 @@
 
-package bodega;
+package modelView;
 
 
 public class Producto {
-    final String tabla = "ESTUDIANTE";
+    final String tabla = "estudiante";
     private int id;
     private String nombre;
     private double precio;
