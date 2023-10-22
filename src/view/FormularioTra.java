@@ -271,12 +271,17 @@ public class FormularioTra extends javax.swing.JFrame {
     }//GEN-LAST:event_mInvActionPerformed
 
     private void VenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VenderActionPerformed
-        String id = Id.getText();
-        int idi = Integer.parseInt(id);
-        String cant = Cant.getText();
-        int canti = Integer.parseInt(cant);
-        Bodega.inventario.venderProducto(idi, canti);
-        JOptionPane.showMessageDialog(null, "Producto vendido, han salido " + canti +" productos del stock");
+        String idv = IdV.getText();
+        int idiv = Integer.parseInt(idv);
+        String cantv = CantV.getText();
+        int cantiv = Integer.parseInt(cantv);
+        Producto productoVender = Bodeg.obtenerProducto(idiv);
+        if(cantiv <= productoVender.getCantidad()){
+            Bodega.inventario.venderProducto(idiv, cantiv);
+            JOptionPane.showMessageDialog(null, "Producto vendido, han salido " + cantiv +" productos del stock");
+        }else{
+            JOptionPane.showMessageDialog(null, "Stock insuficiente");
+        }
     }//GEN-LAST:event_VenderActionPerformed
 
     private void AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarActionPerformed
@@ -284,8 +289,12 @@ public class FormularioTra extends javax.swing.JFrame {
         int idi = Integer.parseInt(id);
         String cant = Cant.getText();
         int canti = Integer.parseInt(cant);
-        Bodega.inventario.actualizarProducto(idi, canti);
-        JOptionPane.showMessageDialog(null, "Stock Actualizado, revisa el inventario");
+        if(idi > 0 && canti > 0){
+            Bodega.inventario.actualizarProducto(idi, canti);
+            JOptionPane.showMessageDialog(null, "Stock Actualizado, revisa el inventario");
+        }if("".equals(cant)&&"".equals(id)){
+            JOptionPane.showMessageDialog(null, "ingresa por favor un valor");
+        }
     }//GEN-LAST:event_AgregarActionPerformed
 
     private void IdVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdVActionPerformed

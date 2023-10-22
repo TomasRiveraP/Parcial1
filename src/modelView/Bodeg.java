@@ -15,7 +15,7 @@ public class Bodeg {
         inventario.put(producto.getId(), producto);
     }
 
-    public Producto obtenerProducto(int id) {
+    public static Producto obtenerProducto(int id) {
         return inventario.get(id);
     }
 
@@ -24,9 +24,8 @@ public class Bodeg {
         if (producto != null) {
             producto.agregarStock(cantidad);
             inventario.put(id, producto);
-            System.out.println("Stock Actualizado");
         } else {
-            System.out.println("Producto no encontrado en la bodega.");
+            
         }
         return inventario;
     }
@@ -39,8 +38,8 @@ public class Bodeg {
             if (cantidad <= productoVender.getCantidad()) {
                 productoVender.vender(cantidad);
                 System.out.println("Venta realizada con exito.");
-                } else {
-                    System.out.println("No hay suficiente stock disponible.");
+            } else {
+                System.out.println("No hay suficiente stock disponible.");
                 }
             } else {
                 System.out.println("Producto no encontrado en la bodega.");
